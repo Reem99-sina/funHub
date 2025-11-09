@@ -1,0 +1,72 @@
+[
+  {
+    "title": "9GAG",
+    "url": "https://9gag.com",
+    "category": "Comedy",
+    "description_en": "Funny memes, videos, and entertaining content.",
+    "description_ar": "ميمات وفيديوهات مضحكة ومحتوى ترفيهي."
+  },
+  {
+    "title": "Miniclip",
+    "url": "https://www.miniclip.com",
+    "category": "Games",
+    "description_en": "Play online games including action, sports, and puzzle games.",
+    "description_ar": "العب ألعاب أونلاين متنوعة من الأكشن والرياضة والألغاز."
+  },
+  {
+    "title": "Kizi",
+    "url": "https://kizi.com",
+    "category": "Games",
+    "description_en": "Free online games for kids and adults.",
+    "description_ar": "ألعاب مجانية على الإنترنت للأطفال والكبار."
+  },
+  {
+    "title": "Armor Games",
+    "url": "https://armorgames.com",
+    "category": "Games",
+    "description_en": "Browser-based games including strategy and adventure.",
+    "description_ar": "ألعاب على المتصفح تشمل الاستراتيجية والمغامرة."
+  },
+  {
+    "title": "Agame",
+    "url": "https://www.agame.com",
+    "category": "Games",
+    "description_en": "Thousands of online games from puzzles to multiplayer games.",
+    "description_ar": "آلاف الألعاب الأونلاين من الألغاز إلى الألعاب الجماعية."
+  },
+  {
+    "title": "CrazyGames",
+    "url": "https://www.crazygames.com",
+    "category": "Games",
+    "description_en": "Play free online games in various genres.",
+    "description_ar": "العب ألعاب أونلاين مجانية بمختلف الأنواع."
+  },
+  {
+    "title": "Addicting Games",
+    "url": "https://www.addictinggames.com",
+    "category": "Games",
+    "description_en": "Fun online games for all ages.",
+    "description_ar": "ألعاب أونلاين ممتعة لجميع الأعمار."
+  },
+  {
+    "title": "Pogo",
+    "url": "https://www.pogo.com",
+    "category": "Games",
+    "description_en": "Classic and casual games online.",
+    "description_ar": "ألعاب كلاسيكية وكاجوال على الإنترنت."
+  },
+  {
+    "title": "Bored Panda",
+    "url": "https://www.boredpanda.com",
+    "category": "Entertainment",
+    "description_en": "Funny and interesting articles, videos, and stories.",
+    "description_ar": "مقالات وفيديوهات وقصص مضحكة ومثيرة للاهتمام."
+  },
+  {
+    "title": "The Useless Web",
+    "url": "https://theuselessweb.com",
+    "category": "Entertainment",
+    "description_en": "Take a random trip to silly and weird websites.",
+    "description_ar": "خذ رحلة عشوائية لمواقع غريبة ومضحكة."
+  }
+]

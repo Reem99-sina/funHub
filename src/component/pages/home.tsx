@@ -33,26 +33,26 @@ function Home() {
 
   return (
     <div className="bg-white bg-cover bg-center bg-no-repeat min-h-full w-full flex flex-col items-center justify-center">
-      <div className="flex flex-col gap-5 items-center justify-center h-full text-black flex-1 max-w-[50%]">
-        <h1 className="text-2xl font-bold text-blue-600 mb-4">{t("title")}</h1>
-        <p>{t("description")}</p>
+      <div className="flex flex-col gap-5 items-center justify-center h-full text-black flex-1 max-w-[90%] md:max-w-[50%]">
         <motion.button
           whileHover={{ scale: 1.1, rotate: [0, 5, -5, 0] }}
           whileTap={{ scale: 0.95 }}
           onClick={goToRandomSite}
           className="relative rounded-full text-lg font-bold text-white
- shadow-[0_0_20px_rgba(0,123,255,0.4)]
-hover:shadow-[0_0_30px_rgba(0,123,255,0.6)]
+shadow-[0_0_20px_rgba(255,0,0,0.4)] hover:shadow-[0_0_30px_rgba(255,0,0,0.6)]
+
     transition-all duration-300 ease-in-out
     border-2 border-white border-opacity-20
     backdrop-blur-md"
         >
           {/* {t("randomLocation")} */}
-          <img src="/logo.PNG" className="w-28" />
+          <img src="/fun.png" className="w-34 rounded-full" />
 
           <span className="absolute top-0 right-0 w-3 h-3 bg-white rounded-full animate-ping"></span>
         </motion.button>
-
+        <h1 className="text-2xl font-bold text-black mb-4">{t("title")}</h1>
+        <h2>{t("subTitle")}</h2>
+        <p>{t("description")}</p>
         {/* <div className="flex flex-wrap gap-3 justify-center mt-6">
           {categories.map((category) => (
             <button
@@ -96,7 +96,6 @@ hover:shadow-[0_0_30px_rgba(0,123,255,0.6)]
             </button>
           </div>
         </CustomModalExample>
-        {/* <Footer /> */}
       </div>
     </div>
   );

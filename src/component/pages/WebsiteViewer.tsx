@@ -13,7 +13,7 @@ export default function WebsiteViewer() {
   if (!site) return <div>Website not found</div>;
 
   return (
-    <div className="flex flex-col min-h-screen w-full mb-[104px]">
+    <div className="flex flex-col min-h-screen w-full ">
       {/* Header */}
 
       {/* Website view */}
@@ -25,6 +25,7 @@ export default function WebsiteViewer() {
         // allowFullScreen={true}
         // allow="fullscreen"
       />
+      
     </div>
   );
 }

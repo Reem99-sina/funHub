@@ -14,7 +14,7 @@ export default function BestSites() {
   const { sites } = useSites();
   const { t, i18n } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
-  const sitesPerPage = 10;
+  const sitesPerPage = 30;
   const sortedSites = [...sites].sort(
     (a, b) => (b.rating || 0) - (a.rating || 0)
   );
@@ -33,8 +33,8 @@ export default function BestSites() {
   };
 
   return (
-    <div className="p-4 max-w-full mx-auto relative h-full text-black flex flex-col gap-3 px-16 mb-[104px]">
-      <h1 className="text-2xl font-bold text-blue-600 mb-4">
+    <div className="p-4 max-w-full mx-auto relative h-full text-black flex flex-col gap-3 px-16 ">
+      <h1 className="text-2xl font-bold text-red-600 mb-4">
         {t("bestSites")}
       </h1>
 
@@ -138,13 +138,13 @@ export const Card = ({ iframe, title, desc, siteIndex }: CardProps) => {
 
   return (
     <div
-      className="cursor-pointer card bg-linear-to-br from-blue-100 via-blue-50 to-blue-100 shadow-2xl hover:shadow-blue-300 transition-all duration-300 transform hover:scale-[1.03] text-black rounded-3xl border border-blue-200"
+      className="cursor-pointer card bg-linear-to-br from-red-100 via-red-50 to-red-100 shadow-2xl hover:shadow-red-300 transition-all duration-300 transform hover:scale-[1.03] text-black rounded-3xl border border-red-200"
       onClick={() => navigate(`/view/${siteIndex}`)}
     >
       <figure className="h-48 overflow-hidden rounded-t-3xl">{iframe}</figure>
 
       <div className="card-body px-6 py-4">
-        <h2 className="card-title text-xl font-extrabold text-blue-700 text-center mb-2 tracking-wide">
+        <h2 className="card-title text-xl font-extrabold text-red-700 text-center mb-2 tracking-wide">
           {title}
         </h2>
 

@@ -33,7 +33,7 @@ export default function ContactUs() {
 
   return (
     <div className="max-w-3xl mx-auto p-6 text-gray-800">
-      <h1 className="text-2xl font-bold text-blue-600 mb-4">
+      <h1 className="text-lg font-bold text-red-600 mb-4">
         {t("contactUsTitle")}
       </h1>
       <p className="mb-6 text-center">{t("contactUsDescription")}</p>
@@ -45,7 +45,7 @@ export default function ContactUs() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-600"
         />
 
         <input
@@ -54,7 +54,7 @@ export default function ContactUs() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-600"
         />
 
         <textarea
@@ -63,13 +63,13 @@ export default function ContactUs() {
           onChange={(e) => setMessage(e.target.value)}
           required
           rows={5}
-          className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-600"
         />
 
         <button
           type="submit"
           disabled={status === "sending"}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+          className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
         >
           {status === "sending" ? t("contactSending") : t("contactSendButton")}
         </button>

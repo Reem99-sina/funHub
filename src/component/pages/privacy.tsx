@@ -5,7 +5,7 @@ function Privacy() {
 
   return (
     <div className="max-w-3xl mx-auto p-6 text-gray-800">
-      <h1 className="text-2xl font-bold text-blue-600 mb-4">{t('PrivacyPolicy')}</h1>
+      <h1 className="text-lg font-bold text-red-600 mb-4">{t('PrivacyPolicy')}</h1>
       <p className="mb-4">
         {t('welcomeMessage')}
       </p>

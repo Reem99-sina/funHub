@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
-      <main className="flex-1 flex items-center justify-center w-full relative">
+      <main className="flex-1 flex items-center justify-center w-full relative ">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/privacy-policy" element={<Privacy />} />
@@ -48,8 +48,8 @@ function App() {
           <Route path="/view/:siteIndex" element={<WebsiteViewer />} />
         </Routes>
       </main>
+        <Footer />
 
-      <Footer />
     </div>
   );
 }

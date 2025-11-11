@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Rating from "./rating";
 import { useSites } from "@/context/SitesContext";
@@ -6,6 +6,7 @@ import { Languages } from "lucide-react";
 
 export default function Header() {
   const location = useLocation();
+  const navigate = useNavigate();
   const siteIndex = location.pathname?.split("/").pop()
     ? Number(location.pathname?.split("/").pop())
     : 0;
@@ -13,53 +14,64 @@ export default function Header() {
   const { sites } = useSites();
   const site = siteIndex ? sites[Number(siteIndex)] : sites[0];
   const linkStyle = (path: string) =>
-    `px-3 py-2 rounded-md text-sm font-medium transition ${
+    `px-3 py-2 rounded-md text-lg font-medium transition underline ${
       location.pathname === path
-        ? "text-blue-600! font-semibold"
-        : "text-gray-700! hover:text-blue-600!"
+        ? "text-red-600! font-semibold"
+        : "text-red-600! hover:text-red-600!"
     }`;
 
-  return (
+  return location.pathname.includes("view") ||
+    location.pathname.includes("best-sites") ||
+    location.pathname.includes("about") ||
+    location.pathname.includes("contact") ||
+    location.pathname.includes("privacy-policy") ? (
     <header className="w-full bg-white border-b border-gray-200 ">
       <div className="container mx-auto flex justify-between items-center px-4 py-3">
         {/* Logo / Site Name */}
         <div className=" flex  gap-3">
-          <Link to="/" className="text-xl font-bold text-blue-600">
-            <img src="/mainlogo.png" className="w-28" />
-          </Link>
-          {location.pathname.includes("view") ? (
-            <div className="text-black text-start">
-              <h3>{i18n.language == "ar" ? site?.name_ar : site?.name_en}</h3>
+          <div className="text-black text-start flex items-center gap-4">
+            <div
+              className="text-xl font-bold text-red-600 cursor-pointer"
+              onClick={() => {
+                const randomIndex = Math.floor(Math.random() * sites.length);
+                navigate(`/view/${randomIndex}`);
+              }}
+            >
+              <img src="/fun.png" className="w-24" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold">
+                {i18n.language == "ar" ? site?.name_ar : site?.name_en}
+              </h3>
               <p>
                 {i18n.language == "ar"
                   ? site.description_ar
                   : site.description_en}
               </p>
+
+              <nav className="flex  items-center ">
+                <Link to="/" className={linkStyle("/")}>
+                  {t("home")}
+                </Link>
+                <span>|</span>
+                <Link to="/best-sites" className={linkStyle("/best-sites")}>
+                  {t("bestSites")}
+                </Link>
+                {/* <Link to="/" className=" text-red-600! text-sm  transition">
+                  {t("backToHome")}
+                </Link> */}
+                <Languages
+                  className="text-red-500 cursor-pointer"
+                  onClick={() =>
+                    i18n.changeLanguage(i18n.language == "ar" ? "en" : "ar")
+                  }
+                />
+              </nav>
               {site && <Rating siteIndex={Number(siteIndex)} />}
-              <Link to="/" className=" text-blue-600! text-sm  transition">
-                {t("backToHome")}
-              </Link>
             </div>
-          ) : null}
+          </div>
         </div>
-        {/* Navigation Links */}
-        {!location.pathname.includes("view") && (
-          <nav className="flex gap-4 items-center text-lg">
-            <Link to="/" className={linkStyle("/")}>
-              {t("home")}
-            </Link>
-            <Link to="/best-sites" className={linkStyle("/best-sites")}>
-              {t("bestSites")}
-            </Link>
-            <Languages
-              className="text-blue-500 cursor-pointer"
-              onClick={() =>
-                i18n.changeLanguage(i18n.language == "ar" ? "en" : "ar")
-              }
-            />
-          </nav>
-        )}
       </div>
     </header>
-  );
+  ) : null;
 }

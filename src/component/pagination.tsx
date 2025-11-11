@@ -24,20 +24,19 @@ interface Props {
 
 const Pagination: React.FC<Props> = memo(
   ({ onPageChange, pageCount, initialPage = 0 }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     return (
       <ReactPaginate
         initialPage={initialPage ? initialPage - 1 : 0}
         nextLabel={
           <div className="flex flex-row items-center justify-center gap-1">
             <p>{t("Next")}</p>
-            <ArrowLeft />
+            {i18n?.language == "ar" ? <ArrowLeft /> : <ArrowRight />}
           </div>
         }
         previousLabel={
           <div className="flex flex-row items-center justify-center gap-1">
-            <ArrowRight />
-
+            {i18n?.language == "ar" ? <ArrowRight /> : <ArrowLeft />}
             <p>{t("Prevs")}</p>
           </div>
         }
@@ -46,7 +45,7 @@ const Pagination: React.FC<Props> = memo(
         marginPagesDisplayed={2}
         pageCount={pageCount}
         renderOnZeroPageCount={null}
-        className="flex flex-row items-center justify-center text-blue-600"
+        className="flex flex-row items-center justify-center text-red-600"
         breakClassName="mb-2 text-pastel2 mx-1"
         pageClassName={clsx(
           itemContainerClassName,
@@ -57,14 +56,14 @@ const Pagination: React.FC<Props> = memo(
           itemContainerClassName,
           "bg-[#F4F6F9] w-[80px] h-[30px] border-0 "
         )}
-        nextLinkClassName={clsx(itemClassName, "text-blue-600")}
+        nextLinkClassName={clsx(itemClassName, "text-red-600")}
         previousClassName={clsx(
           itemContainerClassName,
           "bg-[#F4F6F9] w-[80px] h-[30px] border-0 "
         )}
-        previousLinkClassName={clsx(itemClassName, "text-blue-600")}
-        activeClassName="bg-blue-one t  border-0"
-        activeLinkClassName="!text-blue-600"
+        previousLinkClassName={clsx(itemClassName, "text-red-600")}
+        activeClassName="bg-red-one t  border-0"
+        activeLinkClassName="!text-red-600"
         disabledLinkClassName={"cursor-not-allowed"}
         disabledClassName="opacity-30 "
       />

@@ -41,7 +41,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/privacy-policy" element={<Privacy />} />
-          <Route path="/terms" element={<div>Terms Page</div>} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<About />} />
           <Route path="/best-sites" element={<BestSites />} />

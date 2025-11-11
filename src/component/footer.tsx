@@ -1,21 +1,22 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const { t } = useTranslation();
 
   return (
     <div className="bg-white w-full text-sm text-gray-500  gap-2  p-10 bottom-0 flex justify-center text-center">
-      <a href="/privacy-policy" className="text-red-500! single-line! underline!">
+      <Link to="/privacy-policy" className="text-red-500! single-line! underline!">
         {t("privacyPolicy")}
-      </a>
+      </Link>
       <span>|</span>
-      <a href="/contact" className="text-red-500! single-line! underline!">
+      <Link to="/contact" className="text-red-500! single-line! underline!">
         {t("contactUs")}
-      </a>
+      </Link>
       |
-      <a href="/about" className="text-red-500! single-line! underline!">
+      <Link to="/about" className="text-red-500! single-line! underline!">
         {t("aboutUs")}
-      </a>{" "}
+      </Link>{" "}
     </div>
   );
 }

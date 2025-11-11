@@ -14,7 +14,7 @@ i18n.use(initReactI18next).init({
   },
   lng: savedLanguage,
     // 👆 استخدم اللغة المحفوظة بدل الثابتة
-  fallbackLng: "ar",
+  fallbackLng: "en",
   interpolation: { escapeValue: false },
 });
 

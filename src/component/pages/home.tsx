@@ -33,7 +33,7 @@ function Home() {
 
   return (
     <div className="bg-white bg-cover bg-center bg-no-repeat min-h-full w-full flex flex-col items-center justify-center">
-      <div className="flex flex-col gap-5 items-center justify-center h-full text-black flex-1 max-w-[90%] md:max-w-[50%]">
+      <div className="flex flex-col gap-5 items-center justify-center h-full text-black flex-1 max-w-[90%] md:max-w-[20%]">
         <motion.button
           whileHover={{ scale: 1.1, rotate: [0, 5, -5, 0] }}
           whileTap={{ scale: 0.95 }}

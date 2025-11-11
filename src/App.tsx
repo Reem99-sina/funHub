@@ -1,16 +1,16 @@
-import { useRef, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useEffect } from "react";
 import "./App.css";
 import "./i18n";
 import { useTranslation } from "react-i18next";
-import sites from "./data/sites_300_en.json";
-import { CustomModalExample, type ModalRef } from "./component/model";
 import Footer from "./component/footer";
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./component/pages/home";
 import Privacy from "./component/pages/privacy";
 import Header from "./component/header";
+import About from "./component/pages/about";
+import WebsiteViewer from "./component/pages/WebsiteViewer";
+import BestSites from "./component/pages/best-sites";
+import ContactUs from "./component/pages/contact";
 
 // const sites = [
 //   "https://www.duolingo.com",
@@ -21,17 +21,34 @@ import Header from "./component/header";
 // ];
 
 function App() {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    // غيّر اتجاه الصفحة بناءً على اللغة
+    if (i18n.language === "ar") {
+      document.documentElement.dir = "rtl";
+      document.documentElement.lang = "ar";
+    } else {
+      document.documentElement.dir = "ltr";
+      document.documentElement.lang = "en";
+    }
+  }, [i18n.language]);
+
   return (
-     <div className="min-h-screen flex flex-col items-center justify-center bg-white">
-      <Header/>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/privacy-policy" element={<Privacy/>} />
-        <Route path="/terms" element={<></>} />
-        <Route path="/contact" element={<></>} />
-        <Route path="/about" element={<></>} />
-        <Route path="/best-sites" element={<></>} />
-      </Routes>
+    <div className="min-h-screen flex flex-col bg-white">
+      <Header />
+      <main className="flex-1 flex items-center justify-center w-full relative">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/privacy-policy" element={<Privacy />} />
+          <Route path="/terms" element={<div>Terms Page</div>} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/best-sites" element={<BestSites />} />
+          <Route path="/view/:siteIndex" element={<WebsiteViewer />} />
+        </Routes>
+      </main>
+
       <Footer />
     </div>
   );

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test iframes</title>
+    <style>
+        .iframe-container {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        iframe {
+            width: 800px;
+            height: 600px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div id="results"></div>
+    <script>
+        const sites = [
+            // Test first few sites as example
+            "https://www.incredibox.com/",
+            "https://www.jacksonpollock.org/",
+            "https://www.nyan.cat/",
+            "https://heraclosgame.com/",
+            "https://www.zombocom.com/"
+        ];
+
+        function testIframe(url) {
+            return new Promise((resolve) => {
+                const container = document.createElement('div');
+                container.className = 'iframe-container';
+                
+                const iframe = document.createElement('iframe');
+                iframe.src = url;
+                
+                const status = document.createElement('p');
+                status.textContent = `Testing: ${url}`;
+                
+                container.appendChild(status);
+                container.appendChild(iframe);
+                
+                document.getElementById('results').appendChild(container);
+                
+                // Check after 5 seconds
+                setTimeout(() => {
+                    try {
+                        // Try to access iframe content
+                        const iframeContent = iframe.contentWindow || iframe.contentDocument;
+                        if (!iframeContent) {
+                            status.textContent = `${url}: Blocked (X-Frame-Options or CSP)`;
+                            status.style.color = 'red';
+                        } else {
+                            status.textContent = `${url}: Allowed`;
+                            status.style.color = 'green';
+                        }
+                    } catch (e) {
+                        status.textContent = `${url}: Blocked (${e.message})`;
+                        status.style.color = 'red';
+                    }
+                    resolve();
+                }, 5000);
+            });
+        }
+
+        async function testAllSites() {
+            for (const url of sites) {
+                await testIframe(url);
+            }
+        }
+
+        testAllSites();
+    </script>
+</body>
+</html>

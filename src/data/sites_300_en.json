@@ -1,72 +1,202 @@
 [
   {
-    "title": "9GAG",
-    "url": "https://9gag.com",
-    "category": "Comedy",
-    "description_en": "Funny memes, videos, and entertaining content.",
-    "description_ar": "ميمات وفيديوهات مضحكة ومحتوى ترفيهي."
+    "name_en": "GeoKitten",
+    "name_ar": "جيو كيتن",
+    "url": "https://www.geokitten.com",
+    "category": "Fun / ترفيهي",
+    "description_en": "Learn what your choice in kittens reveals.",
+    "description_ar": "اكتشف ماذا تكشف اختياراتك من القطط."
   },
   {
-    "title": "Miniclip",
-    "url": "https://www.miniclip.com",
-    "category": "Games",
-    "description_en": "Play online games including action, sports, and puzzle games.",
-    "description_ar": "العب ألعاب أونلاين متنوعة من الأكشن والرياضة والألغاز."
+    "name_en": "Rock Paper Scissors Game",
+    "name_ar": "لعبة حجر ورقة مقص",
+    "url": "https://www.rock-paper-scissors-game.com",
+    "category": "Fun / ترفيهي",
+    "description_en": "Play rock-paper-scissors online.",
+    "description_ar": "العب لعبة حجر-ورقة-مقص أونلاين."
   },
   {
-    "title": "Kizi",
-    "url": "https://kizi.com",
-    "category": "Games",
-    "description_en": "Free online games for kids and adults.",
-    "description_ar": "ألعاب مجانية على الإنترنت للأطفال والكبار."
+    "name_en": "Your Metric Birthday",
+    "name_ar": "عيد ميلادك بالقياس المتري",
+    "url": "https://www.yourmetricbirthday.com",
+    "category": "Fun / ترفيهي",
+    "description_en": "Find out when you turn 10,000 days old.",
+    "description_ar": "اكتشف متى ستكمل 10,000 يوم من عمرك."
   },
   {
-    "title": "Armor Games",
-    "url": "https://armorgames.com",
-    "category": "Games",
-    "description_en": "Browser-based games including strategy and adventure.",
-    "description_ar": "ألعاب على المتصفح تشمل الاستراتيجية والمغامرة."
+    "name_en": "Face Guesser",
+    "name_ar": "خمن الوجه",
+    "url": "https://www.faceguesser.com",
+    "category": "Fun / ترفيهي",
+    "description_en": "Guess a famous face.",
+    "description_ar": "خمن وجه شخصية مشهورة."
   },
   {
-    "title": "Agame",
-    "url": "https://www.agame.com",
-    "category": "Games",
-    "description_en": "Thousands of online games from puzzles to multiplayer games.",
-    "description_ar": "آلاف الألعاب الأونلاين من الألغاز إلى الألعاب الجماعية."
+    "name_en": "Monday's Child",
+    "name_ar": "طفل يوم الاثنين",
+    "url": "https://www.mondays-child.com",
+    "category": "Fun / ترفيهي",
+    "description_en": "Learn on what day you were born.",
+    "description_ar": "اعرف في أي يوم وُلدت."
   },
   {
-    "title": "CrazyGames",
-    "url": "https://www.crazygames.com",
-    "category": "Games",
-    "description_en": "Play free online games in various genres.",
-    "description_ar": "العب ألعاب أونلاين مجانية بمختلف الأنواع."
+    "name_en": "Poopy McButt",
+    "name_ar": "بوبي مكبت",
+    "url": "https://www.poopymcbutt.com",
+    "category": "Fun / ترفيهي",
+    "description_en": "Laugh at poop jokes.",
+    "description_ar": "اضحك على نكات البراز."
   },
   {
-    "title": "Addicting Games",
-    "url": "https://www.addictinggames.com",
-    "category": "Games",
-    "description_en": "Fun online games for all ages.",
-    "description_ar": "ألعاب أونلاين ممتعة لجميع الأعمار."
+    "name_en": "Emoji Phrasebook Quizzes",
+    "name_ar": "اختبارات قاموس الإيموجي",
+    "url": "https://www.emojiphrasebook.com/quizzes",
+    "category": "Fun / ترفيهي",
+    "description_en": "Solve emoji quizzes.",
+    "description_ar": "حل اختبارات الإيموجي."
   },
   {
-    "title": "Pogo",
-    "url": "https://www.pogo.com",
-    "category": "Games",
-    "description_en": "Classic and casual games online.",
-    "description_ar": "ألعاب كلاسيكية وكاجوال على الإنترنت."
+    "name_en": "Inherently Funny",
+    "name_ar": "مضحك بطبيعته",
+    "url": "https://www.inherentlyfunny.com/funny-gag-gifts",
+    "category": "Fun / ترفيهي",
+    "description_en": "Shop for funny gag gifts.",
+    "description_ar": "تسوق هدايا مضحكة."
   },
   {
-    "title": "Bored Panda",
-    "url": "https://www.boredpanda.com",
-    "category": "Entertainment",
-    "description_en": "Funny and interesting articles, videos, and stories.",
-    "description_ar": "مقالات وفيديوهات وقصص مضحكة ومثيرة للاهتمام."
+    "name_en": "Polkadot Game",
+    "name_ar": "لعبة بولكا دوت",
+    "url": "https://www.polkadotgame.com/part-two",
+    "category": "Fun / ترفيهي",
+    "description_en": "Grow a dot without getting popped.",
+    "description_ar": "نمّي نقطة دون أن تنفجر."
   },
   {
-    "title": "The Useless Web",
-    "url": "https://theuselessweb.com",
-    "category": "Entertainment",
-    "description_en": "Take a random trip to silly and weird websites.",
-    "description_ar": "خذ رحلة عشوائية لمواقع غريبة ومضحكة."
+    "name_en": "Color Associations",
+    "name_ar": "ارتباطات الألوان",
+    "url": "https://www.colorassociations.com",
+    "category": "Fun / ترفيهي",
+    "description_en": "Share your color synesthesia.",
+    "description_ar": "شارك تزامن الألوان لديك."
+  },
+  {
+    "name_en": "Totally Useless Websites",
+    "name_ar": "مواقع عديمة الفائدة تمامًا",
+    "url": "https://www.totallyuselesswebsites.com",
+    "category": "Fun / ترفيهي",
+    "description_en": "Explore useless websites.",
+    "description_ar": "استكشف مواقع بلا فائدة."
+  },
+  {
+    "name_en": "Drawing Garden",
+    "name_ar": "حديقة الرسم",
+    "url": "https://drawing.garden",
+    "category": "Fun / ترفيهي",
+    "description_en": "Grow a garden.",
+    "description_ar": "ازرع حديقة."
+  },
+  {
+    "name_en": "Babadum",
+    "name_ar": "بابادوم",
+    "url": "https://babadum.com",
+    "category": "Fun / ترفيهي",
+    "description_en": "Learn foreign words.",
+    "description_ar": "تعلم كلمات من لغات أخرى."
+  },
+  {
+    "name_en": "Pangram",
+    "name_ar": "بانجرام",
+    "url": "https://pangram.me/en",
+    "category": "Fun / ترفيهي",
+    "description_en": "Create a panagram.",
+    "description_ar": "اصنع جملة تحتوي جميع الحروف الأبجدية."
+  },
+  {
+    "name_en": "Mr. Doob - Beach Balls",
+    "name_ar": "السيد دووب - كرات الشاطئ",
+    "url": "https://mrdoob.com/#/150/beach_balls",
+    "category": "Fun / ترفيهي",
+    "description_en": "Play with beach balls online.",
+    "description_ar": "العب بالكرات الشاطئية أونلاين."
+  },
+  {
+    "name_en": "QWOP / Foddy Athletics",
+    "name_ar": "كوب / رياضة فودي",
+    "url": "https://www.foddy.net/Athletics.html",
+    "category": "Fun / ترفيهي",
+    "description_en": "Walk before you run.",
+    "description_ar": "حاول المشي قبل الجري."
+  },
+  {
+    "name_en": "Space Elevator",
+    "name_ar": "مصعد الفضاء",
+    "url": "https://neal.fun/space-elevator/",
+    "category": "Fun / ترفيهي",
+    "description_en": "Take an elevator to space.",
+    "description_ar": "اصعد بالمصعد إلى الفضاء."
+  },
+  {
+    "name_en": "Gravity Lab",
+    "name_ar": "مختبر الجاذبية",
+    "url": "https://lab.nationalmedals.org/gravity/",
+    "category": "Fun / ترفيهي",
+    "description_en": "Create your own universe.",
+    "description_ar": "اصنع كونك الخاص."
+  },
+  {
+    "name_en": "Ribbons Demo",
+    "name_ar": "عرض الأشرطة",
+    "url": "https://www.airtightinteractive.com/demos/ribbons/",
+    "category": "Fun / ترفيهي",
+    "description_en": "Get tangled in ribbons.",
+    "description_ar": "تشابك بالأشرطة."
+  },
+  {
+    "name_en": "Rainy Mood",
+    "name_ar": "مزاج ممطر",
+    "url": "https://www.rainymood.com",
+    "category": "Fun / ترفيهي",
+    "description_en": "Get yourself into a mood.",
+    "description_ar": "استمتع بجو ممطر."
+  },
+  {
+    "name_en": "Gurka",
+    "name_ar": "غوركا",
+    "url": "https://gurka.se",
+    "category": "Fun / ترفيهي",
+    "description_en": "Spin a cucumber.",
+    "description_ar": "دوّر الخيار."
+  },
+  {
+    "name_en": "Noot Space",
+    "name_ar": "نووت سبيس",
+    "url": "https://noot.space/",
+    "category": "Fun / ترفيهي",
+    "description_en": "Click and noot noot.",
+    "description_ar": "اضغط واستمتع بصوت نووت نووت."
+  },
+  {
+    "name_en": "Vole - Death Roulette",
+    "name_ar": "فول - روليت الموت",
+    "url": "https://vole.wtf/death-roulette/",
+    "category": "Fun / ترفيهي",
+    "description_en": "Suffer an old-timey death.",
+    "description_ar": "اختبر موتًا على طريقة قديمة."
+  },
+  {
+    "name_en": "Orb Farm",
+    "name_ar": "مزرعة الكرات",
+    "url": "https://orb.farm",
+    "category": "Fun / ترفيهي",
+    "description_en": "Nurture an ecosystem.",
+    "description_ar": "اعتنِ بنظام بيئي."
+  },
+  {
+    "name_en": "Ben Island - PetPet",
+    "name_ar": "جزيرة بن - بيت بيت",
+    "url": "https://benisland.neocities.org/petpet/",
+    "category": "Fun / ترفيهي",
+    "description_en": "Pet a GIF.",
+    "description_ar": "دلّل صورة متحركة GIF."
   }
 ]

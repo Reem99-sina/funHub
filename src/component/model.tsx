@@ -34,7 +34,7 @@ export const CustomModalExample = forwardRef<ModalRef, Props>(
     ref
   ) => {
     const [isVisible, setIsVisible] = React.useState(false);
-    const { t, i18n } = useTranslation();
+    const {  i18n } = useTranslation();
     useImperativeHandle(ref, () => ({
       open: () => setIsVisible(true),
       close: () => setIsVisible(false),
@@ -59,7 +59,7 @@ export const CustomModalExample = forwardRef<ModalRef, Props>(
             <div
               className={clsx(
                 "relative w-full p-6 rounded-xl",
-                "bg-gradient-to-br from-[#0f0f1a] via-[#1a1a2e] to-[#0f0f1a]",
+                "bg-linear-to-br from-[#0f0f1a] via-[#1a1a2e] to-[#0f0f1a]",
                 "border border-[#ff00ff] shadow-[0_0_20px_#ff00ff]",
                 "animate-[fadeIn_0.3s_ease-in-out]",
                 sizeClasses[size],
@@ -72,7 +72,7 @@ export const CustomModalExample = forwardRef<ModalRef, Props>(
                   onClick={() => setIsVisible(false)}
                   className={clsx(
                     i18n.language == "ar" ? " left-4 " : " right-4 ",
-                    "!w-auto  !text-gray-500 hover:text-gray-800  !text-2xl"
+                    "w-auto!  text-gray-500! hover:text-gray-800  text-2xl!"
                   )}
                   text="✕"
                 />
@@ -93,7 +93,7 @@ export const CustomModalExample = forwardRef<ModalRef, Props>(
                     text=""
                     onClick={goBack}
                     startIcon={<ChevronLeft className="w-5 h-5" />}
-                    className="absolute -left-0 bg-white top-[50%]  transform -translate-y-1/2"
+                    className="absolute left-0 bg-white top-[50%]  transform -translate-y-1/2"
                   />
                 </div>
                 <div className="absolute inset-y-0 right-32 flex items-center z-50">
@@ -101,7 +101,7 @@ export const CustomModalExample = forwardRef<ModalRef, Props>(
                     text=""
                     onClick={goNext}
                     startIcon={<ChevronRight className="w-5 h-5" />}
-                    className="absolute -right-0 bg-white top-[50%] transform -translate-y-1/2"
+                    className="absolute right-0 bg-white top-[50%] transform -translate-y-1/2"
                   />
                 </div>
               </div>

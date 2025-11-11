@@ -4,14 +4,23 @@ import { initReactI18next } from "react-i18next";
 import en from "./en.json";
 import ar from "./ar.json";
 
+// 👇 استرجاع اللغة المحفوظة أو الافتراضية
+const savedLanguage = localStorage.getItem("lang") || "ar";
+
 i18n.use(initReactI18next).init({
   resources: {
     en: { translation: en },
     ar: { translation: ar },
   },
-  lng: "en", // default language
-  fallbackLng: "en",
+  lng: savedLanguage,
+    // 👆 استخدم اللغة المحفوظة بدل الثابتة
+  fallbackLng: "ar",
   interpolation: { escapeValue: false },
+});
+
+// 👇 حفظ اللغة كلما تغيّرت
+i18n.on("languageChanged", (lng) => {
+  localStorage.setItem("lang", lng);
 });
 
 export default i18n;

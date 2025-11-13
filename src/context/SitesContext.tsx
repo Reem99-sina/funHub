@@ -68,19 +68,14 @@ export const SitesProvider = ({ children }: { children: ReactNode }) => {
   // Sync to localStorage whenever sites change
   useEffect(() => {
     if (sites.length === 0) return;
-    localStorage.setItem(
-      "sites-ratings",
-      JSON.stringify({ version: SITES_VERSION, sites })
-    );
+    const timeout = setTimeout(() => {
+      localStorage.setItem(
+        "sites-ratings",
+        JSON.stringify({ version: SITES_VERSION, sites })
+      );
+    }, 500);
+    return () => clearTimeout(timeout);
   }, [sites]);
-
-  // Clear localStorage on unmount
-  useEffect(() => {
-    return () => {
-      localStorage.removeItem("sites-ratings");
-      console.log("Sites localStorage cleared on unmount");
-    };
-  }, []);
 
   const rateSite = (index: number, rating: number) => {
     if (sites[index]?.rating === 0) {

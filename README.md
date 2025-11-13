@@ -33,4 +33,4 @@ The data is dynamically fetched from a **Google Sheets CSV file** using the **Pa
 The app fetches website data from a public **Google Sheets CSV link**:
 
 ```js
-const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQXG7jJEtrf5sNk3HN_-h06xnPAXqKnuTFK0t99VxQ-QKub2f06ImbwxLgqxsuEaHHQINbu2IWfsPKU/pub?gid=0&single=true&output=csv";
+const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQXG7jJEtrf5sNk3HN_-h06xnPAXqKnuTFK0t99VxQ-QKub2f06ImbwxLgqxsuEaHHQINbu2IWfsPKU/pub?gid=451459624&single=true&output=csv";

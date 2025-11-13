@@ -2,8 +2,8 @@
   "home": "Home",
   "backToHome": "Back to Home",
   "title": "Bored?",
-  "subTitle":"Go ahead, press the Bored Button",
-  "description": "I am bored. I'm so bored. I'm bored at school. I'm bored at work. I'm bored to tears. I'm bored to death. Do you find yourself saying any of the above? If so, you've reached the right website. Clicking the red button will instantly take you to one of hundreds of interactive websites specially selected to alleviate boredom. So go ahead and give it a try. Press the Bored Button and be bored no more.",
+  "subTitle": "Each click is a snapshot",
+  "description": "I am bored.  Do you find yourself saying any of the above? If so, you've reached the right website. Clicking the red button will instantly take you to one of hundreds of interactive websites specially selected to alleviate boredom. So go ahead and give it a try. Press the Bored Button and be bored no more.",
   "randomLocation": " Random Site ",
   "openInNewTab": "Open in new tab",
   "privacyPolicy": "Privacy Policy",
@@ -28,8 +28,44 @@
   "aboutUsWelcome": "Welcome to FunSites — a simple and fun way to discover new websites randomly! 🎲 Our goal is to make your time online more entertaining by showing you interesting, creative, and unique websites from around the world.",
   "aboutUsDescription": "Whether you're looking for games, humor, puzzles, or just something new to explore, FunSites has you covered. We constantly update our list to keep things fresh and fun.",
   "aboutUsQuote": "“Sometimes the best discoveries are made by accident.” 🚀",
-  "entertainmentSites":"Entertainment Sites",
-  "Next":"Next",
-  "Prevs":"Prevs"
+  "entertainmentSites": "Entertainment Sites",
+  "Next": "Next",
+  "Prevs": "Prevs",
 
+  "funopiWelcome": "Welcome to FUNOPI",
+  "funopiIntro": "We are an innovative entertainment platform built on a simple and fun idea: every click takes you to a new world!",
+  "funopiDescription": "FUNOPI explores the best entertaining, weird, and useful websites from across the internet, showing them to you randomly with a single click — offering you a fun, fast, and unexpected discovery experience every time you visit.",
+  "funopiExperienceTitle": "We offer an experience that is:",
+  "funopiFeatures1": "Light and fast",
+  "funopiFeatures2": "Fun for all ages",
+  "funopiFeatures3": "No registration required",
+  "funopiFeatures4": "No complexity",
+  "funopiGoal": "Our goal is to be your first platform for instant fun and for discovering new websites you’ve never seen before.",
+  "funopiDailyUpdate": "Every day, we add new, carefully selected websites to enhance your experience.",
+  "funopiClosing": "Welcome to the world of FUNOPI — one click... and a new world awaits!",
+  "privacyTitle": "Privacy Policy",
+  "privacyIntro": "At FUNOPI, we respect your privacy and are committed to protecting your data while you use our platform. Below is a simplified explanation of our privacy practices:",
+
+  "privacySection1Title": "1. Information We Collect",
+  "privacySection1Point1": "We do not require any registration or personal data.",
+  "privacySection1Point2": "We may use cookies to improve site speed and performance only.",
+  "privacySection1Point3": "We may use analytics tools such as Google Analytics to understand visitor numbers and user interactions — without collecting personally identifiable data.",
+
+  "privacySection2Title": "2. How We Use the Data",
+  "privacySection2Point1": "To enhance your user experience.",
+  "privacySection2Point2": "We do not sell or share any data with third parties for commercial purposes.",
+
+  "privacySection3Title": "3. External Links",
+  "privacySection3Desc": "FUNOPI may contain links to external websites, and we are not responsible for the content or privacy practices of those sites. We recommend reviewing the privacy policy of each site you visit through our platform.",
+
+  "privacySection4Title": "4. Advertisements",
+  "privacySection4Desc": "FUNOPI may display ads from third parties such as Google AdSense, which may use tracking tools to improve ad relevance based on your interests.",
+
+  "privacySection5Title": "5. Data Protection",
+  "privacySection5Desc": "We use industry-standard measures to protect the site and communications from unauthorized access or misuse.",
+
+  "privacySection6Title": "6. Policy Updates",
+  "privacySection6Desc": "We may update this privacy policy from time to time, and any changes will be posted on this page.",
+
+  "privacyContact": "If you have any questions or requests, please contact us through the Contact Us page."
 }

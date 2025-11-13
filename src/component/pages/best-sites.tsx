@@ -1,7 +1,7 @@
 import { useSites } from "@/context/SitesContext";
 // import { Swiper, SwiperSlide } from "swiper/react";
 // @ts-ignore
-import "swiper/css";
+// import "swiper/css";
 // import { Autoplay } from "swiper/modules";
 import { useMemo, useState, type ReactNode } from "react";
 // import type { Swiper as SwiperClass } from "swiper";
@@ -33,8 +33,8 @@ export default function BestSites() {
   };
 
   return (
-    <div className="p-4 max-w-full mx-auto relative h-full text-black flex flex-col gap-3 px-16 ">
-      <h1 className="text-2xl font-bold text-red-600 mb-4">
+    <div className="p-4 max-w-full mx-auto relative h-full text-black flex flex-col gap-3 md:px-16 ">
+      <h1 className="text-3xl font-extrabold text-center text-red-600 mb-8 tracking-wide">
         {t("bestSites")}
       </h1>
 
@@ -96,7 +96,7 @@ export default function BestSites() {
           </SwiperSlide>
         ))}
       </Swiper> */}
-      <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
         {currentSites.map((site, index) => (
           <Card
             iframe={
@@ -144,11 +144,11 @@ export const Card = ({ iframe, title, desc, siteIndex }: CardProps) => {
       <figure className="h-48 overflow-hidden rounded-t-3xl">{iframe}</figure>
 
       <div className="card-body px-6 py-4">
-        <h2 className="card-title text-xl font-extrabold text-red-700 text-center mb-2 tracking-wide">
+        <h2 className="text-xl font-bold text-red-700 mb-2 leading-snug tracking-wide">
           {title}
         </h2>
 
-        <p className="text-sm text-gray-700 text-center mb-4 leading-relaxed">
+        <p className="text-sm md:text-base text-gray-600 leading-snug font-medium mt-1">
           {desc}
         </p>
 

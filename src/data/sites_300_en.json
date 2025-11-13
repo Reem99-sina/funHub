@@ -64,12 +64,12 @@
     "description_ar": "تسوق هدايا مضحكة."
   },
   {
-    "name_en": "Polkadot Game",
-    "name_ar": "لعبة بولكا دوت",
-    "url": "https://www.polkadotgame.com/part-two",
+    "name_en": "Pi Day Birthday",
+    "name_ar": "عيد ميلادك على باي",
+    "url": "https://www.mypiday.com",
     "category": "Fun / ترفيهي",
-    "description_en": "Grow a dot without getting popped.",
-    "description_ar": "نمّي نقطة دون أن تنفجر."
+    "description_en": "Find out on which digits of Pi your birthday appears.",
+    "description_ar": "اكتشف على أي أرقام من باي يظهر عيد ميلادك."
   },
   {
     "name_en": "Color Associations",
@@ -104,12 +104,12 @@
     "description_ar": "تعلم كلمات من لغات أخرى."
   },
   {
-    "name_en": "Pangram",
-    "name_ar": "بانجرام",
-    "url": "https://pangram.me/en",
+    "name_en": "The Great Gatsby Free",
+    "name_ar": "غاتسبي العظيم مجانًا",
+    "url": "https://www.freegreatgatsby.com",
     "category": "Fun / ترفيهي",
-    "description_en": "Create a panagram.",
-    "description_ar": "اصنع جملة تحتوي جميع الحروف الأبجدية."
+    "description_en": "Download and read The Great Gatsby online for free.",
+    "description_ar": "قم بتحميل وقراءة رواية غاتسبي العظيم مجانًا عبر الإنترنت."
   },
   {
     "name_en": "Mr. Doob - Beach Balls",
@@ -128,12 +128,12 @@
     "description_ar": "حاول المشي قبل الجري."
   },
   {
-    "name_en": "Space Elevator",
-    "name_ar": "مصعد الفضاء",
-    "url": "https://neal.fun/space-elevator/",
+    "name_en": "Slap Kirk",
+    "name_ar": "اضرب كيرك",
+    "url": "https://www.slapkirk.com/",
     "category": "Fun / ترفيهي",
-    "description_en": "Take an elevator to space.",
-    "description_ar": "اصعد بالمصعد إلى الفضاء."
+    "description_en": "A funny interactive website where you can slap Captain Kirk.",
+    "description_ar": "موقع ترفيهي تفاعلي يمكنك فيه ضرب كابتن كيرك."
   },
   {
     "name_en": "Gravity Lab",
@@ -198,5 +198,13 @@
     "category": "Fun / ترفيهي",
     "description_en": "Pet a GIF.",
     "description_ar": "دلّل صورة متحركة GIF."
+  },
+  {
+    "name_en": "Towards and Beyond",
+    "name_ar": "نحو وما وراء",
+    "url": "https://www.towardsandbeyond.com/",
+    "category": "Fun / ترفيهي",
+    "description_en": "Explore a dizzying maze and challenge your navigation skills.",
+    "description_ar": "استكشف متاهة مذهلة وتحدى مهاراتك في التنقل."
   }
 ]

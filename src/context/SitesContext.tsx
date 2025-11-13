@@ -24,35 +24,41 @@ type SitesContextType = {
 };
 
 const SitesContext = createContext<SitesContextType | undefined>(undefined);
-
+const SITES_VERSION = "1.3";
 export const SitesProvider = ({ children }: { children: ReactNode }) => {
   // Load from localStorage or default JSON
   const [sites, setSites] = useState<SiteType[]>(() => {
     const saved = localStorage.getItem("sites-ratings");
     if (saved) {
       try {
-        const parsed: SiteType[] = JSON.parse(saved);
-        return parsed;
-      } catch (err) {
-        console.error("Failed to parse localStorage sites:", err);
-      }
+        const parsed = JSON.parse(saved);
+        if (parsed.version === SITES_VERSION) return parsed.sites;
+      } catch {}
     }
-
-    // Add rating: 0 to all sites
     return sitesData.map((site) => ({ ...site, rating: 0 }));
   });
 
   // Sync to localStorage whenever sites change
   useEffect(() => {
-    localStorage.setItem("sites-ratings", JSON.stringify(sites));
+    localStorage.setItem(
+      "sites-ratings",
+      JSON.stringify({ version: SITES_VERSION, sites })
+    );
   }, [sites]);
-
+  useEffect(() => {
+    return () => {
+      localStorage.removeItem("sites-ratings"); // يمسح LocalStorage عند unmount
+      console.log("Sites localStorage cleared on unmount");
+    };
+  }, []);
   const rateSite = (index: number, rating: number) => {
-    setSites((prev) => {
-      const newSites = [...prev];
-      newSites[index] = { ...newSites[index], rating };
-      return newSites;
-    });
+    if (sites[index].rating == 0) {
+      setSites((prev) => {
+        const newSites = [...prev];
+        newSites[index] = { ...newSites[index], rating };
+        return newSites;
+      });
+    }
   };
 
   return (

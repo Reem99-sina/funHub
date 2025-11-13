@@ -3,7 +3,7 @@ import "./App.css";
 import "./i18n";
 import { useTranslation } from "react-i18next";
 import Footer from "./component/footer";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./component/pages/home";
 import Privacy from "./component/pages/privacy";
 import Header from "./component/header";
@@ -22,7 +22,7 @@ import ContactUs from "./component/pages/contact";
 
 function App() {
   const { i18n } = useTranslation();
-
+  const location = useLocation();
   useEffect(() => {
     // غيّر اتجاه الصفحة بناءً على اللغة
     if (i18n.language === "ar") {
@@ -33,7 +33,7 @@ function App() {
       document.documentElement.lang = "en";
     }
   }, [i18n.language]);
-
+  const hideFooter = location.pathname.includes("view");
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
@@ -47,8 +47,7 @@ function App() {
           <Route path="/view/:siteIndex" element={<WebsiteViewer />} />
         </Routes>
       </main>
-        <Footer />
-
+      {!hideFooter && <Footer />}
     </div>
   );
 }

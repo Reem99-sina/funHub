@@ -5,9 +5,7 @@ export default function ContactUs() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState<
-    "idle" | "sending" | "success" | "error"
-  >("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -15,7 +13,6 @@ export default function ContactUs() {
     setStatus("sending");
 
     try {
-      // Replace with your API endpoint
       await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -32,20 +29,26 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-6 text-gray-800">
-      <h1 className="text-lg font-bold text-red-600 mb-4">
+    <div className="max-w-2xl mx-auto px-6 py-10 text-gray-800  leading-relaxed">
+      <h1 className="text-3xl font-semibold text-red-600 mb-6 text-center tracking-wide">
         {t("contactUsTitle")}
       </h1>
-      <p className="mb-6 text-center">{t("contactUsDescription")}</p>
 
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <p className="mb-8 text-center text-gray-600 text-lg font-medium">
+        {t("contactUsDescription")}
+      </p>
+
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-5 bg-white shadow-md rounded-2xl p-6 border border-gray-100"
+      >
         <input
           type="text"
           placeholder={t("contactNamePlaceholder")}
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-600"
+          className="border border-gray-300 rounded-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition"
         />
 
         <input
@@ -54,7 +57,7 @@ export default function ContactUs() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-600"
+          className="border border-gray-300 rounded-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition"
         />
 
         <textarea
@@ -63,22 +66,26 @@ export default function ContactUs() {
           onChange={(e) => setMessage(e.target.value)}
           required
           rows={5}
-          className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-600"
+          className="border border-gray-300 rounded-lg px-4 py-3 text-base resize-none focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition"
         />
 
         <button
           type="submit"
           disabled={status === "sending"}
-          className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
+          className="bg-red-700 text-white font-medium text-lg py-3 rounded-lg shadow hover:bg-red-700 transition disabled:opacity-50"
         >
           {status === "sending" ? t("contactSending") : t("contactSendButton")}
         </button>
 
         {status === "success" && (
-          <p className="text-green-600">{t("contactSuccess")}</p>
+          <p className="text-green-600 text-center font-medium">
+            {t("contactSuccess")}
+          </p>
         )}
         {status === "error" && (
-          <p className="text-red-600">{t("contactError")}</p>
+          <p className="text-red-600 text-center font-medium">
+            {t("contactError")}
+          </p>
         )}
       </form>
     </div>

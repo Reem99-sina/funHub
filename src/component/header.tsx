@@ -14,10 +14,10 @@ export default function Header() {
   const { sites } = useSites();
   const site = siteIndex ? sites[Number(siteIndex)] : sites[0];
   const linkStyle = (path: string) =>
-    `px-3 py-2 rounded-md text-lg font-medium transition underline ${
+    `px-2 py-1 rounded-md text-sm md:text-sm font-medium transition duration-300 ${
       location.pathname === path
-        ? "text-red-600! font-semibold"
-        : "text-red-600! hover:text-red-600!"
+        ? "text-red-600 font-semibold underline underline-offset-4"
+        : "text-red-600 hover:text-red-700 hover:underline underline-offset-4"
     }`;
 
   return location.pathname.includes("view") ||
@@ -26,7 +26,7 @@ export default function Header() {
     location.pathname.includes("contact") ||
     location.pathname.includes("privacy-policy") ? (
     <header className="w-full bg-white border-b border-gray-200 ">
-      <div className="container mx-auto flex justify-between items-center px-4 py-3">
+      <div className="container mx-auto flex justify-between items-center px-4 pt-3 pb-1">
         {/* Logo / Site Name */}
         <div className=" flex  gap-3">
           <div className="text-black text-start flex items-center gap-4">
@@ -37,17 +37,17 @@ export default function Header() {
                 navigate(`/view/${randomIndex}`);
               }}
             >
-              <img src="/fun.png" className="w-24" />
+              <img src="/button.png" className="w-16" />
             </div>
             <div>
-              <h3 className="text-lg font-bold">
+              <h3 className="text-base font-bold leading-tight">
                 {i18n.language == "ar" ? site?.name_ar : site?.name_en}
               </h3>
-              <p>
-                {i18n.language == "ar"
-                  ? site.description_ar
-                  : site.description_en}
-              </p>
+               <p className="text-sm  text-gray-600 leading-snug font-medium mt-1">
+              {i18n.language === "ar"
+                ? site?.description_ar
+                : site?.description_en}
+            </p>
 
               <nav className="flex  items-center ">
                 <Link to="/" className={linkStyle("/")}>
@@ -61,13 +61,14 @@ export default function Header() {
                   {t("backToHome")}
                 </Link> */}
                 <Languages
-                  className="text-red-500 cursor-pointer"
+                  className="text-red-600 cursor-pointer"
                   onClick={() =>
                     i18n.changeLanguage(i18n.language == "ar" ? "en" : "ar")
                   }
                 />
               </nav>
-              {site && <Rating siteIndex={Number(siteIndex)} />}
+                {site && <Rating siteIndex={Number(siteIndex)} />}
+              
             </div>
           </div>
         </div>

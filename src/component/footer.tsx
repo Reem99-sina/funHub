@@ -2,22 +2,42 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 function Footer() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
-    <div className="bg-white w-full text-sm text-gray-500  gap-2  p-10 bottom-0 flex justify-center text-center">
-      <Link to="/privacy-policy" className="text-red-500! single-line! underline!">
+    <footer
+      className={`w-full bg-white py-6 flex flex-wrap items-center justify-center gap-4 md:gap-6 
+      text-center `}
+      style={{
+        fontFamily:
+          i18n.language === "ar" ? "'Tajawal', sans-serif" : "'Poppins', sans-serif",
+      }}
+    >
+      <Link
+        to="/privacy-policy"
+        className="text-red-600 hover:text-red-600 font-medium transition-colors duration-300 underline-offset-4 hover:underline text-base md:text-lg"
+      >
         {t("privacyPolicy")}
       </Link>
-      <span>|</span>
-      <Link to="/contact" className="text-red-500! single-line! underline!">
+
+      <span className="text-gray-400">|</span>
+
+      <Link
+        to="/contact"
+        className="text-red-600 hover:text-red-600 font-medium transition-colors duration-300 underline-offset-4 hover:underline text-base md:text-lg"
+      >
         {t("contactUs")}
       </Link>
-      |
-      <Link to="/about" className="text-red-500! single-line! underline!">
+
+      <span className="text-gray-400">|</span>
+
+      <Link
+        to="/about"
+        className="text-red-600 hover:text-red-600 font-medium transition-colors duration-300 underline-offset-4 hover:underline text-base md:text-lg"
+      >
         {t("aboutUs")}
-      </Link>{" "}
-    </div>
+      </Link>
+    </footer>
   );
 }
 

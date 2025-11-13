@@ -1,4 +1,8 @@
 @import "tailwindcss";
+
+@theme {
+ --color-main-color:#800001;
+}
 :root {
   font-family: Cairo,  Changa,'Tajawal', sans-serif;
   line-height: 1.5;

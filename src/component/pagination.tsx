@@ -45,7 +45,7 @@ const Pagination: React.FC<Props> = memo(
         marginPagesDisplayed={2}
         pageCount={pageCount}
         renderOnZeroPageCount={null}
-        className="flex flex-row items-center justify-center text-red-600"
+        className="flex flex-row items-center justify-center text-main-color"
         breakClassName="mb-2 text-pastel2 mx-1"
         pageClassName={clsx(
           itemContainerClassName,
@@ -56,14 +56,14 @@ const Pagination: React.FC<Props> = memo(
           itemContainerClassName,
           "bg-[#F4F6F9] w-[80px] h-[30px] border-0 "
         )}
-        nextLinkClassName={clsx(itemClassName, "text-red-600")}
+        nextLinkClassName={clsx(itemClassName, "text-main-color")}
         previousClassName={clsx(
           itemContainerClassName,
           "bg-[#F4F6F9] w-[80px] h-[30px] border-0 "
         )}
-        previousLinkClassName={clsx(itemClassName, "text-red-600")}
+        previousLinkClassName={clsx(itemClassName, "text-main-color")}
         activeClassName="bg-red-one t  border-0"
-        activeLinkClassName="!text-red-600"
+        activeLinkClassName="!text-main-color"
         disabledLinkClassName={"cursor-not-allowed"}
         disabledClassName="opacity-30 "
       />

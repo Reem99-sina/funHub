@@ -54,14 +54,14 @@ function Privacy() {
       <div className="max-w-3xl mx-auto">
         {/* العنوان الرئيسي */}
         <div className="flex items-center gap-3 mb-3 justify-center">
-          <Shield className="text-red-600 w-8 h-8" />
-          <h1 className="text-2xl md:text-4xl font-bold text-gray-900">
-            {t("privacyTitle")} - <span className="text-red-600">FUNOPI</span>
+          <Shield className="text-main-color w-8 h-8" />
+          <h1 className="text-2xl md:text-4xl font-bold text-black">
+            {t("privacyTitle")} - <span className="text-main-color">FUNOPI</span>
           </h1>
         </div>
 
         {/* المقدمة */}
-        <p className="mb-4 text-base md:text-lg text-gray-700 leading-relaxed ">
+        <p className="mb-4 text-base md:text-lg text-black leading-relaxed ">
           {t("privacyIntro")}
         </p>
 
@@ -69,17 +69,17 @@ function Privacy() {
         {sections.map((section, index) => (
           <div
             key={index}
-            className="bg-gray-50 rounded-2xl p-6 shadow-sm border border-gray-100 text-start"
+            className="bg-blackrounded-2xl p-6 shadow-sm  text-start"
           >
             <div className="flex items-center gap-3 mb-4">
-              <section.icon className="w-6 h-6 text-red-500" />
-              <h2 className="text-xl md:text-2xl font-semibold text-red-600">
+              <section.icon className="w-6 h-6 text-main-color" />
+              <h2 className="text-xl md:text-2xl font-semibold text-main-color">
                 {section.title}
               </h2>
             </div>
 
             {section.points && (
-              <ul className="list-disc pl-6 space-y-2 text-gray-700">
+              <ul className="list-disc pl-6 space-y-2 text-black">
                 {section.points.map((point, i) => (
                   <li key={i}>{point}</li>
                 ))}
@@ -87,18 +87,18 @@ function Privacy() {
             )}
 
             {section.desc && (
-              <p className="text-gray-700 leading-relaxed">{section.desc}</p>
+              <p className="text-black leading-relaxed">{section.desc}</p>
             )}
           </div>
         ))}
 
         {/* التواصل */}
-        <div className="bg-red-50 border border-red-100 rounded-xl p-3 mt-4 text-gray-700">
+        <div className="bg-red-50 border border-red-100 rounded-xl p-3 mt-4 text-black">
           <p className="text-base md:text-lg leading-relaxed">
             {t("privacyContact")}{" "}
             <a
               href="mailto:contact@funopi.com"
-              className="text-red-500 hover:text-red-600 underline underline-offset-4 transition-colors duration-300 font-medium"
+              className="text-main-color hover:text-main-color underline underline-offset-4 transition-colors duration-300 font-medium"
             >
               contact@funopi.com
             </a>

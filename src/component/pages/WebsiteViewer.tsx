@@ -13,7 +13,7 @@ export default function WebsiteViewer() {
 
   if (!site) return <div>Website not found</div>;
   return (
-    <div className="flex flex-col min-h-[79.5vh] w-full">
+    <div className="flex flex-col min-h-[83.5vh] w-full">
       <iframe
         src={site.url}
         title={i18n.language === "ar" ? site?.name_ar : site?.name_en}

@@ -15,7 +15,7 @@ function Footer() {
     >
       <Link
         to="/privacy-policy"
-        className="text-red-600 hover:text-red-600 font-medium transition-colors duration-300 underline-offset-4 hover:underline text-base md:text-lg"
+        className="text-main-color hover:text-main-color font-medium transition-colors duration-300 underline-offset-4 hover:underline text-base md:text-lg"
       >
         {t("privacyPolicy")}
       </Link>
@@ -24,7 +24,7 @@ function Footer() {
 
       <Link
         to="/contact"
-        className="text-red-600 hover:text-red-600 font-medium transition-colors duration-300 underline-offset-4 hover:underline text-base md:text-lg"
+        className="text-main-color hover:text-main-color font-medium transition-colors duration-300 underline-offset-4 hover:underline text-base md:text-lg"
       >
         {t("contactUs")}
       </Link>
@@ -33,7 +33,7 @@ function Footer() {
 
       <Link
         to="/about"
-        className="text-red-600 hover:text-red-600 font-medium transition-colors duration-300 underline-offset-4 hover:underline text-base md:text-lg"
+        className="text-main-color hover:text-main-color font-medium transition-colors duration-300 underline-offset-4 hover:underline text-base md:text-lg"
       >
         {t("aboutUs")}
       </Link>

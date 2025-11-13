@@ -36,15 +36,15 @@ function Home() {
         </motion.button>
 
         {/* العناوين والنصوص */}
-        <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 drop-shadow-sm tracking-wide">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-black drop-shadow-sm tracking-wide">
           {t("title")}
         </h1>
 
-        <h2 className="text-xl md:text-2xl font-semibold text-red-600">
+        <h2 className="text-xl md:text-2xl font-semibold text-main-color">
           {t("subTitle")}
         </h2>
 
-        <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-md italic">
+        <p className="text-base md:text-lg text-black leading-relaxed max-w-md italic">
           {t("description")}
         </p>
 

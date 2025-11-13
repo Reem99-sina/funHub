@@ -16,8 +16,8 @@ export default function Header() {
   const linkStyle = (path: string) =>
     `px-2 py-1 rounded-md text-sm md:text-sm font-medium transition duration-300 ${
       location.pathname === path
-        ? "text-red-600 font-semibold underline underline-offset-4"
-        : "text-red-600 hover:text-red-700 hover:underline underline-offset-4"
+        ? "text-main-color font-semibold underline underline-offset-4"
+        : "text-main-color hover:text-red-700 hover:underline underline-offset-4"
     }`;
 
   return location.pathname.includes("view") ||
@@ -31,7 +31,7 @@ export default function Header() {
         <div className=" flex  gap-3">
           <div className="text-black text-start flex items-center gap-4">
             <div
-              className="text-xl font-bold text-red-600 cursor-pointer"
+              className="text-xl font-bold text-main-color cursor-pointer"
               onClick={() => {
                 const randomIndex = Math.floor(Math.random() * sites.length);
                 navigate(`/view/${randomIndex}`);
@@ -43,7 +43,7 @@ export default function Header() {
               <h3 className="text-base font-bold leading-tight">
                 {i18n.language == "ar" ? site?.name_ar : site?.name_en}
               </h3>
-               <p className="text-sm  text-gray-600 leading-snug font-medium mt-1">
+               <p className="text-sm  text-black leading-snug font-medium mt-1">
               {i18n.language === "ar"
                 ? site?.description_ar
                 : site?.description_en}
@@ -57,11 +57,11 @@ export default function Header() {
                 <Link to="/best-sites" className={linkStyle("/best-sites")}>
                   {t("bestSites")}
                 </Link>
-                {/* <Link to="/" className=" text-red-600! text-sm  transition">
+                {/* <Link to="/" className=" text-main-color! text-sm  transition">
                   {t("backToHome")}
                 </Link> */}
                 <Languages
-                  className="text-red-600 cursor-pointer"
+                  className="text-main-color cursor-pointer"
                   onClick={() =>
                     i18n.changeLanguage(i18n.language == "ar" ? "en" : "ar")
                   }

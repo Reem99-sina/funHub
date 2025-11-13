@@ -10,7 +10,7 @@ export default function Rating({ siteIndex }: { siteIndex: number }) {
         <button
           key={star}
           onClick={() => rateSite(siteIndex, star)}
-          className={`text-xl ${rating >= star ? "text-yellow-400" : "text-gray-300"}`}
+          className={`text-xl ${rating >= star ? "text-yellow-400" : "text-gray-400"}`}
         >
           ★
         </button>

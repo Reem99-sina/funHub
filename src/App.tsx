@@ -11,6 +11,7 @@ import About from "./component/pages/about";
 import WebsiteViewer from "./component/pages/WebsiteViewer";
 import BestSites from "./component/pages/best-sites";
 import ContactUs from "./component/pages/contact";
+import Papa from "papaparse";
 
 // const sites = [
 //   "https://www.duolingo.com",
@@ -34,6 +35,19 @@ function App() {
     }
   }, [i18n.language]);
   const hideFooter = location.pathname.includes("view");
+
+  
+   useEffect(() => {
+    const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQXG7jJEtrf5sNk3HN_-h06xnPAXqKnuTFK0t99VxQ-QKub2f06ImbwxLgqxsuEaHHQINbu2IWfsPKU/pub?gid=0&single=true&output=csv";
+
+    fetch(url)
+      .then(res => res.text())
+      .then(csvText => {
+        const parsed = Papa.parse(csvText, { header: true });
+        console.log(parsed.data,"parsed");
+        // setSites(parsed.data);        
+      });
+  }, []);
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />

@@ -29,18 +29,18 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-10 text-gray-800  leading-relaxed">
-      <h1 className="text-3xl font-semibold text-red-600 mb-6 text-center tracking-wide">
+    <div className="max-w-2xl mx-auto px-6 py-10 text-black  leading-relaxed">
+      <h1 className="text-3xl font-semibold text-main-color mb-6 text-center tracking-wide">
         {t("contactUsTitle")}
       </h1>
 
-      <p className="mb-8 text-center text-gray-600 text-lg font-medium">
+      <p className="mb-8 text-center text-black text-lg font-medium">
         {t("contactUsDescription")}
       </p>
 
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-5 bg-white shadow-md rounded-2xl p-6 border border-gray-100"
+        className="flex flex-col gap-5 bg-white shadow-md rounded-2xl p-6 border border-gray-300"
       >
         <input
           type="text"
@@ -48,7 +48,7 @@ export default function ContactUs() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className="border border-gray-300 rounded-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition"
+          className="border border-black rounded-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition"
         />
 
         <input
@@ -57,7 +57,7 @@ export default function ContactUs() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="border border-gray-300 rounded-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition"
+          className="border border-black rounded-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition"
         />
 
         <textarea
@@ -66,13 +66,13 @@ export default function ContactUs() {
           onChange={(e) => setMessage(e.target.value)}
           required
           rows={5}
-          className="border border-gray-300 rounded-lg px-4 py-3 text-base resize-none focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition"
+          className="border border-black rounded-lg px-4 py-3 text-base resize-none focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition"
         />
 
         <button
           type="submit"
           disabled={status === "sending"}
-          className="bg-red-700 text-white font-medium text-lg py-3 rounded-lg shadow hover:bg-red-700 transition disabled:opacity-50"
+          className="bg-main-color text-white font-medium text-lg py-3 rounded-lg shadow hover:bg-main-color transition disabled:opacity-50"
         >
           {status === "sending" ? t("contactSending") : t("contactSendButton")}
         </button>
@@ -83,7 +83,7 @@ export default function ContactUs() {
           </p>
         )}
         {status === "error" && (
-          <p className="text-red-600 text-center font-medium">
+          <p className="text-main-color text-center font-medium">
             {t("contactError")}
           </p>
         )}

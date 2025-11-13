@@ -34,7 +34,7 @@ export default function BestSites() {
 
   return (
     <div className="p-4 max-w-full mx-auto relative h-full text-black flex flex-col gap-3 md:px-16 ">
-      <h1 className="text-3xl font-extrabold text-center text-red-600 mb-8 tracking-wide">
+      <h1 className="text-3xl font-extrabold text-center text-main-color mb-8 tracking-wide">
         {t("bestSites")}
       </h1>
 
@@ -144,11 +144,11 @@ export const Card = ({ iframe, title, desc, siteIndex }: CardProps) => {
       <figure className="h-48 overflow-hidden rounded-t-3xl">{iframe}</figure>
 
       <div className="card-body px-6 py-4">
-        <h2 className="text-xl font-bold text-red-700 mb-2 leading-snug tracking-wide">
+        <h2 className="text-xl font-bold text-main-color mb-2 leading-snug tracking-wide">
           {title}
         </h2>
 
-        <p className="text-sm md:text-base text-gray-600 leading-snug font-medium mt-1">
+        <p className="text-sm md:text-base text-black leading-snug font-medium mt-1">
           {desc}
         </p>
 

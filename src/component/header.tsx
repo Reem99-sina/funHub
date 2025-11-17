@@ -34,7 +34,7 @@ export default function Header() {
               className="text-xl font-bold text-main-color cursor-pointer"
               onClick={() => {
                 const randomIndex = Math.floor(Math.random() * sites.length);
-                navigate(`/view/${randomIndex}`);
+                navigate(`/view/${randomIndex}`,{ state: { navigatedTo: true }});
               }}
             >
               <img src="/button.png" className="w-16" />

@@ -6,7 +6,7 @@ import {
   type ReactNode,
 } from "react";
 import Papa from "papaparse";
-// import sitesData from "@/data/sites_300_en.json"; // no longer needed
+import sitesData from "@/data/sites_300_en.json";
 
 export type SiteType = {
   name_en: string;
@@ -15,7 +15,7 @@ export type SiteType = {
   category: string;
   description_en: string;
   description_ar: string;
-  rating?: number; // rating 1-5
+  rating?: number;
 };
 
 type SitesContextType = {
@@ -24,65 +24,68 @@ type SitesContextType = {
 };
 
 const SitesContext = createContext<SitesContextType | undefined>(undefined);
-const SITES_VERSION = "1.4";
+
+const RATING_KEY = "sites-ratings";
 
 export const SitesProvider = ({ children }: { children: ReactNode }) => {
   const [sites, setSites] = useState<SiteType[]>([]);
+  const fetchSitesPage = async (savedRatings: Record<number, number>) => {
+    try {
+      const url =
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vQXG7jJEtrf5sNk3HN_-h06xnPAXqKnuTFK0t99VxQ-QKub2f06ImbwxLgqxsuEaHHQINbu2IWfsPKU/pub?gid=451459624&single=true&output=csv";
 
-  // Load from Google Sheet OR localStorage on mount
-  useEffect(() => {
-    const saved = localStorage.getItem("sites-ratings");
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        if (parsed.version === SITES_VERSION) {
-          setSites(parsed.sites);
-          return; // stop here if localStorage is valid
-        }
-      } catch {}
+      const corsUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(
+        url + "&cacheBust=" + new Date().getTime()
+      )}`;
+
+      const res = await fetch(corsUrl);
+      const text = await res.text();
+      const parsed = Papa.parse(text, { header: true });
+      const sheetSites = parsed.data as SiteType[];
+
+      return sheetSites.map((site, index) => ({
+        ...site,
+        rating: savedRatings[index] || 0,
+      }));
+    } catch (err) {
+      console.error("Failed to fetch Google Sheet, loading local JSON:", err);
+      // fallback to local JSON
+      return sitesData.map((site, index) => ({
+        ...site,
+        rating: savedRatings[index] || 0,
+      }));
     }
+  };
+  useEffect(() => {
+    // Load user ratings only
+    const savedRatings: Record<number, number> = JSON.parse(
+      localStorage.getItem(RATING_KEY) || "{}"
+    );
 
-    // If no valid localStorage, fetch from Google Sheet
-    const url =
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQXG7jJEtrf5sNk3HN_-h06xnPAXqKnuTFK0t99VxQ-QKub2f06ImbwxLgqxsuEaHHQINbu2IWfsPKU/pub?gid=451459624&single=true&output=csv";
-    const corsUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(
-      url
-    )}`;
-    fetch(corsUrl)
-      .then((res) => res.text())
-      .then((csvText) => {
-        const parsed = Papa.parse(csvText, { header: true });
-        // Add rating=0 to each site
-        const sheetSites = parsed.data.map((site: any) => ({
-          ...site,
-          rating: 0,
-        })) as SiteType[];
-        setSites(sheetSites);
-      })
-      .catch((err) => {
-        console.error("Failed to fetch Google Sheet:", err);
-        setSites([]); // fallback empty
-      });
+    // Google Sheet CSV
+    fetchSitesPage(savedRatings).then((merged) => setSites(merged));
+
+    return () => {
+      setSites([]);
+    };
   }, []);
 
-  // Sync to localStorage whenever sites change
-  useEffect(() => {
-    if (sites.length === 0) return;
-    const timeout = setTimeout(() => {
-      localStorage.setItem(
-        "sites-ratings",
-        JSON.stringify({ version: SITES_VERSION, sites })
-      );
-    }, 500);
-    return () => clearTimeout(timeout);
-  }, [sites]);
+  // Save ratings only
 
   const rateSite = (index: number, rating: number) => {
-    if (sites[index]?.rating === 0) {
+    if (sites[index].rating == 0) {
       setSites((prev) => {
-        const newSites = [...prev];
-        newSites[index] = { ...newSites[index], rating };
-        return newSites;
+        const updated = [...prev];
+        updated[index] = { ...updated[index], rating };
+
+        // Save only this rating to localStorage
+        const savedRatings: Record<number, number> = JSON.parse(
+          localStorage.getItem(RATING_KEY) || "{}"
+        );
+        savedRatings[index] = rating;
+        localStorage.setItem(RATING_KEY, JSON.stringify(savedRatings));
+
+        return updated;
       });
     }
   };

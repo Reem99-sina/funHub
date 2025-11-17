@@ -15,9 +15,10 @@ export default function BestSites() {
   const { t, i18n } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
   const sitesPerPage = 30;
-  const sortedSites = [...sites].sort(
+
+  const sortedSites = useMemo(() => [...sites]?.sort(
     (a, b) => (b.rating || 0) - (a.rating || 0)
-  );
+  ), [sites]);
 
   const lengthData = useMemo(() => {
     return sortedSites?.length || 1;
@@ -104,8 +105,10 @@ export default function BestSites() {
                 src={site.url}
                 title={i18n.language == "ar" ? site?.name_ar : site?.name_en}
                 className="w-full h-64 rounded"
+                  loading="lazy"
                 sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
               />
+              
             }
             title={i18n.language == "ar" ? site?.name_ar : site?.name_en}
             desc={

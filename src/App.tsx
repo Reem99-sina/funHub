@@ -11,7 +11,7 @@ import About from "./component/pages/about";
 import WebsiteViewer from "./component/pages/WebsiteViewer";
 import BestSites from "./component/pages/best-sites";
 import ContactUs from "./component/pages/contact";
-import Papa from "papaparse";
+import clsx from "clsx";
 
 // const sites = [
 //   "https://www.duolingo.com",
@@ -37,28 +37,17 @@ function App() {
   const hideFooter = location.pathname.includes("view");
 
   
-   useEffect(() => {
-    const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQXG7jJEtrf5sNk3HN_-h06xnPAXqKnuTFK0t99VxQ-QKub2f06ImbwxLgqxsuEaHHQINbu2IWfsPKU/pub?gid=0&single=true&output=csv";
-
-    fetch(url)
-      .then(res => res.text())
-      .then(csvText => {
-        const parsed = Papa.parse(csvText, { header: true });
-        console.log(parsed.data,"parsed");
-        // setSites(parsed.data);        
-      });
-  }, []);
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
-      <main className="flex-1 flex items-center justify-center w-full relative ">
+      <main className={clsx("flex-1 flex items-start  justify-center w-full relative ")}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<About />} />
           <Route path="/best-sites" element={<BestSites />} />
-          <Route path="/view/:siteIndex" element={<WebsiteViewer />} />
+          <Route path="/view/:siteIndex" element={<WebsiteViewer/>} />
         </Routes>
       </main>
       {!hideFooter && <Footer />}

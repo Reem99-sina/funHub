@@ -14,11 +14,11 @@ function Home() {
   const goToRandomSite = () => {
     const randomIndex = Math.floor(Math.random() * sites.length);
     setRandomUrl(randomIndex);
-    navigate(`/view/${randomIndex}`);
+    navigate(`/view/${randomIndex}`,{ state: { navigatedTo: true }});
   };
 
   return (
-    <div className="bg-white bg-cover bg-center bg-no-repeat min-h-full w-full flex flex-col items-center justify-center">
+    <div className="bg-white bg-cover bg-center bg-no-repeat min-h-full w-full flex flex-col items-center justify-center my-auto">
       <div className="flex flex-col gap-6 items-center justify-center h-full text-black flex-1 max-w-[90%] md:max-w-[25%] text-center">
 
         {/* الزر */}

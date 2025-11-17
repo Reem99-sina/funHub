@@ -206,5 +206,29 @@
     "category": "Fun / ترفيهي",
     "description_en": "Explore a dizzying maze and challenge your navigation skills.",
     "description_ar": "استكشف متاهة مذهلة وتحدى مهاراتك في التنقل."
+  },
+  {
+    "name_en": "Scream into the void",
+    "name_ar": "صرخة في الفراغ",
+    "url": "https://screamintothevoid.com",
+    "category": "Fun / ترفيهي",
+    "description_en": "Share your thoughts anonymously online.",
+    "description_ar": "شارك أفكارك بشكل مجهول عبر الإنترنت."
+  },
+  {
+    "name_en": "Start a never-ending journey.",
+    "name_ar": "ابدأ رحلة لا تنتهي أبدًا",
+    "url": "https://www.zoomquilt.org",
+    "category": "Fun / ترفيهي",
+    "description_en": "Start a never-ending journey.",
+    "description_ar": "ابدأ رحلة لا تنتهي أبدًا"
+  },
+  {
+    "name_en": "Order a coffee.",
+    "name_ar": "اطلب القهوة",
+    "url": "https://www.whatsmystarbucksname.com/",
+    "category": "Fun / ترفيهي",
+    "description_en": "Order a coffee.",
+    "description_ar": "اطلب القهوة"
   }
 ]

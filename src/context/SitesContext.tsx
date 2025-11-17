@@ -61,7 +61,12 @@ export const SitesProvider = ({ children }: { children: ReactNode }) => {
     const savedRatings: Record<number, number> = JSON.parse(
       localStorage.getItem(RATING_KEY) || "{}"
     );
-
+    setSites(
+      sitesData.map((site, index) => ({
+        ...site,
+        rating: savedRatings[index] || 0,
+      }))
+    );
     // Google Sheet CSV
     fetchSitesPage(savedRatings).then((merged) => setSites(merged));
 
